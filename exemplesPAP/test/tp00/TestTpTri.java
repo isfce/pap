@@ -1,5 +1,7 @@
 package tp00;
 
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -68,4 +70,18 @@ class TestTpTri {
 		TpTri.triBullesV2(l3);
 		assertEquals(Collections.EMPTY_LIST, l3);
 	}
+	@Test
+	void test_estTrie() {
+		int[] v0 = {1};
+		assertTrue(TpTri.estTrie(v0));
+		int[] v0_1 = {};
+		assertTrue(TpTri.estTrie(v0_1));
+		int[] v1 = { 1, 2, 4, 7, 8, 9 };
+		assertTrue(TpTri.estTrie(v1));
+		int[] v2 = { 2, 1, 4, 7, 8, 9 };
+		assertFalse(TpTri.estTrie(v2));
+		int[] v3 = { 1, 1, 4, 7, 18, 9 };
+		assertFalse(TpTri.estTrie(v3));
+	}
+	
 }

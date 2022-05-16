@@ -1,3 +1,24 @@
+#Vérifie si un vecteur est trié
+def estTrie(v : list):
+    '''Vérifie si un vecteur est trié de manière croissante'''
+    i = len(v) - 2
+    while i >= 0 and v[i] <= v[i+1]:
+        i = i - 1
+    return i < 0
+
+#TriBulle
+def triBulles(v : list):
+    '''Trie le vecteur de manière croissante (tri bulles)'''
+    j = len(v) -2
+    swap = True
+    while j>=0 and swap:
+        swap = False
+        for i in range(j+1):
+            if v[i] > v[i+1]:
+                v[i], v[i+1] = v[i+1], v[i]
+                swap = True
+        j = j - 1
+
 #Recherche binaire
 def rechercheBin(v : list, nbr  : int)-> int:
     ''' Recherche nbr dans la liste V et retourne l'indice ou -1'''

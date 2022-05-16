@@ -5,6 +5,19 @@ import java.util.List;
 
 public class TpTri {
 	/**
+	 * Indique si le vecteur est trié de manière croissante
+	 * Un vecteur de taille 0 sera considéré comme trié
+	 * @param v 
+	 * @return true ou false en fct que le vecteur est trié
+	 */
+	public static boolean estTrie(int[] v) {
+		int i = v.length - 2;
+		while (i >= 0 && v[i] <= v[i + 1])
+			i--;
+		return i < 0;
+	}
+
+	/**
 	 * Tri à bulles qui trie de manière croissante un vecteur d'entiers
 	 * 
 	 * @param v un vecteur d'entiers
@@ -32,7 +45,8 @@ public class TpTri {
 	 * @param v est une liste d'entiers (Integer)
 	 */
 	public static void triBullesV2(List<Integer> v) {
-		int i, tmp;
+		int i;
+		Integer tmp;
 		int nbSwap = 1;
 		int j = v.size() - 2;
 
