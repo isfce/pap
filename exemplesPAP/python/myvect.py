@@ -38,6 +38,23 @@ def rechercheBin(v : list, nbr  : int)-> int:
     else :
         return -1
 
+def sommeMat(m1,m2):
+    '''m1 et m2 sont deux matrices de même taille
+       la fonction retourne une nouvelle matrice ou
+       m3[i][j] = m1[i][j] + m2[i][j]'''
+    return [[m1[i][j] + m2[i][j] for j in range(len(m1[0]))]
+         for i in range(len(m1))]
+
+def sommeMat2(m1,m2):
+    '''m1 et m2 sont deux matrices de même taille
+       la fonction retourne 
+       m1[i][j] = m1[i][j] + m2[i][j]'''
+    for i in range(len(m1)):
+        for j in range(len(m1[0])):
+            m1[i][j] = m1[i][j] + m2[i][j]
+    return m1
+    
+    
 #A exécuter uniquement lorsqu'il s'agit du module main
 if __name__ == "__main__":
     
@@ -45,3 +62,6 @@ if __name__ == "__main__":
     print(rechercheBin(l1,20))
     print(rechercheBin(l1,3))
     print(rechercheBin(l1,25))
+    m1=[[1,2,3],[4,5,6]]
+    m2=[[1,4,2],[9,2,5]]
+    print(sommeMat(m1,m2))

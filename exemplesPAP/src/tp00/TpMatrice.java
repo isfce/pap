@@ -52,9 +52,11 @@ public class TpMatrice {
 
 	public static void main(String[] args) {
 
-		int[][] m1 = new int[3][2];
+		int[][] m1 = new int[3][3];
 		initMat1(m1);
-		afficheMat(m1);
+
+		int[][] m2 = { { 1, 2, 3 }, { 2, 2, 4 }, { 3, 4, 3 } };
+		afficheMat(m2);
 
 	}
 
