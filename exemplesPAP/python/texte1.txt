@@ -1,0 +1,3 @@
+C'est un premier test
+l'encodage de ce fichier est à détecter.
+C'est en CP1252

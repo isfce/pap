@@ -1,0 +1,5 @@
+nom ; prenom ; compte ; somme
+Van Oudenhove ; Didier ; 001-2817561-44 ; 125.6
+Delporteur ; Aline ; 310-124567-21 ; -78.25
+Fénoprâert ; Naïs ; 001-1498756-76 ; 87
+
