@@ -29,7 +29,7 @@ public class Othello {
 	// position choisie par le joueur
 	private Position choixJ;
 	// permet de lire les entrées
-	private Scanner scan = new Scanner(System.in);
+	private Scanner scan;
 	// Position autorisée pour le joueur (noir ou blanc)
 	private Set<Position> choixPossiblesJoueur = new HashSet<>();
 
@@ -37,6 +37,7 @@ public class Othello {
 	 * Initialise une nouvelle partie Doit être appelé avant de commencer une partie
 	 */
 	public void initPartie() {
+		scan = new Scanner(System.in);
 		// crée la matrice
 		jeu = new int[8][8];
 		// mets les 4 pions du départ
@@ -148,6 +149,7 @@ public class Othello {
 	 * @param dernierChoix dernier pion posé
 	 */
 	private void ajusteChoixJoueur() {
+		this.choixPossiblesJoueur.clear();
 		// TODO
 	}
 
@@ -221,7 +223,7 @@ public class Othello {
 	 * 
 	 */
 	private void afficheJeu() {
-	//TODO
+		// TODO
 	}
 
 	/**
@@ -268,6 +270,13 @@ public class Othello {
 			}
 		} while (!ok);
 		return x;
+	}
+	
+	private static int retournePionsT(int[][]jeu,boolean tourDesBlancs,int x, int y, Position dir) {
+		int nbPionsRetourne = 0;
+		// TODO
+
+		return nbPionsRetourne;
 	}
 
 	public static void main(String[] args) {

@@ -16,7 +16,7 @@ def save(nom, lignes, encoding='cp1252'):
         f.write(ligne)
     f.close
 try:
-    load('texte1.txt')
+    load('texte91.txt')
     lignes=load('texte2.txt',separateur=';',encoding="utf8")
     save('texte5.txt',lignes)
 except IOError as e:

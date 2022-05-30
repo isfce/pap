@@ -27,7 +27,8 @@ public class Fichiers {
 		// ajoure un buffer pour la performance
 		// utilise un try with ressource pour que les resources soient fermées
 		// automatiquement
-		try (FileReader rd = new FileReader(fichier, charset); BufferedReader br = new BufferedReader(rd);) {
+		try (FileReader rd = new FileReader(fichier, charset); 
+				BufferedReader br = new BufferedReader(rd);) {
 			System.out.println("Encoding: " + rd.getEncoding());
 			String ligne;
 			List<String> mots;
@@ -51,7 +52,8 @@ public class Fichiers {
 		// création d'un fichier
 		File file = new File(nom);
 		// utilise un FileWrite et un buffer dans un try with resources
-		try (FileWriter fw = new FileWriter(file.getAbsoluteFile(),charset); BufferedWriter bw = new BufferedWriter(fw);) {
+		try (FileWriter fw = new FileWriter(file.getAbsoluteFile(),charset); 
+				BufferedWriter bw = new BufferedWriter(fw);) {
 
 			// créer le fichier s'il n'existe pas
 			if (!file.exists()) {
@@ -62,7 +64,7 @@ public class Fichiers {
 				bw.write(ligne);
 			}
 			// fermeture du fichier
-			bw.close();//fetch et close
+			//bw.close();//fetch et close
 		} catch (IOException e) {
 			System.err.println("Problème: "+e.getMessage());
 		}
