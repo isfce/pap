@@ -242,7 +242,6 @@ public class Othello {
 			if (y < 0)
 				x = -1;// si y<0 ==> on mets aussi x à -1
 		}
-		// return choixPossiblesJoueur.stream().findFirst().get();
 		return new Position(x, y);
 	}
 
@@ -272,13 +271,6 @@ public class Othello {
 		return x;
 	}
 	
-	private static int retournePionsT(int[][]jeu,boolean tourDesBlancs,int x, int y, Position dir) {
-		int nbPionsRetourne = 0;
-		// TODO
-
-		return nbPionsRetourne;
-	}
-
 	public static void main(String[] args) {
 		Othello reversi = new Othello();
 		reversi.initPartie();
