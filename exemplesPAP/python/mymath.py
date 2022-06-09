@@ -7,6 +7,15 @@ def factorielle(n: int)-> int:
         y=y*n
     return y # Retourne n!
 
+def factorielleR(n: int)-> int:
+    ''' Calcule la factorielle de n  (récursif)'''
+    assert type(n)== int and n>=0, "n doit être un entier positif"
+    if n == 0 :
+        res = 1
+    else:
+        res = n * factorielleR(n-1)
+    return res # Retourne n!
+
 def power(x: float,y: int = 2)->float:
     '''Calcule x^y avec y entier positif '''
     assert  isinstance(x, (int, float))  and isinstance(y, int) and y>= 0 , 'Erreur x: réel, y:entier >=0'
@@ -37,6 +46,24 @@ def power2(x: float,y: int)-> float:
     #si y est impaire alors res<-res*x
     if y%2 != 0:
         res*=x
+        
+    return res if yPositif else 1/res
+
+def power3(x: float,y: int)-> float:
+    '''Calcule x^y avec y entier (récursif)'''
+    assert isinstance(x, (int, float))  and isinstance(y, int), 'Erreur x: réel, y:entier'
+    
+    if y==0 : return 1
+    # Y>0
+    yPositif= y>0
+    y= abs(y)
+    if y==1 or x==0 or x==1: return x if yPositif else 1/x
+    # Y est positif maintenant
+    res = power3(x,y//2)
+    res = res * res
+    #si y est impaire alors res<-res*x
+    if y%2 != 0:
+        res = res * x
         
     return res if yPositif else 1/res
 

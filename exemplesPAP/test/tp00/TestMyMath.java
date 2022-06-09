@@ -15,7 +15,24 @@ class TestMyMath {
 		assertThrows(AssertionError.class, () -> MyMath.factorielle(-1));
 		assertThrows(AssertionError.class, () -> MyMath.factorielle(21));
 	}
-
+	
+	@Test
+	void testFiboR() {
+		assertEquals(5, MyMath.fibo(5));
+		assertEquals(8, MyMath.fibo(6));
+		assertEquals(1, MyMath.fibo(1));
+		assertEquals(0, MyMath.fibo(0));
+		assertThrows(AssertionError.class, () -> MyMath.fibo(-1));
+	}
+@Test
+	void testFactorielleR() {
+		assertEquals(120, MyMath.factorielleR(5));
+		assertEquals(1, MyMath.factorielleR(0));
+		assertEquals(1, MyMath.factorielleR(1));
+		assertEquals(2, MyMath.factorielleR(2));
+		assertThrows(AssertionError.class, () -> MyMath.factorielleR(-1));
+		assertThrows(AssertionError.class, () -> MyMath.factorielleR(21));
+	}
 	@Test
 	void testPower1() {
 		assertEquals(1.0, MyMath.power(0.0, 0));
@@ -57,8 +74,21 @@ class TestMyMath {
 		assertEquals(-8.0, MyMath.power2(-2.0, 3));
 		assertEquals(4.0, MyMath.power2(-2.0, 2));
 		assertEquals(125, MyMath.power2(5.0, 3));
-		assertEquals(2.5961484292674138E33, MyMath.power(2, 111));
-		assertThrows(AssertionError.class, () -> MyMath.power(0, -1));
+		assertEquals(2.5961484292674138E33, MyMath.power2(2, 111));
+		assertThrows(AssertionError.class, () -> MyMath.power2(0, -1));
+	}
+
+	@Test
+	void testPower3() {
+		assertEquals(1.0, MyMath.power3(0.0, 0));
+		assertEquals(1, MyMath.power3(-1, 0));
+		assertEquals(0, MyMath.power3(0.0, 4));
+		assertEquals(4, MyMath.power3(4.0, 1));
+		assertEquals(-8.0, MyMath.power3(-2.0, 3));
+		assertEquals(4.0, MyMath.power3(-2.0, 2));
+		assertEquals(125, MyMath.power3(5.0, 3));
+		assertEquals(2.5961484292674138E33, MyMath.power3(2, 111));
+		assertThrows(AssertionError.class, () -> MyMath.power3(0, -1));
 	}
 
 	@Test

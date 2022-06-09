@@ -11,6 +11,15 @@ class TestMyMath(unittest.TestCase):
         self.assertRaises(AssertionError,mymath.factorielle,-1)
         self.assertRaises(AssertionError,mymath.factorielle,2.3)
         self.assertRaises(AssertionError,mymath.factorielle,'B')
+    
+    def test_factR(self):
+        self.assertEqual(mymath.factorielleR(5),120)
+        self.assertEqual(mymath.factorielleR(0),1)
+        self.assertEqual(mymath.factorielleR(1),1)
+        self.assertEqual(mymath.factorielleR(2),2)
+        self.assertRaises(AssertionError,mymath.factorielleR,-1)
+        self.assertRaises(AssertionError,mymath.factorielleR,2.3)
+        self.assertRaises(AssertionError,mymath.factorielleR,'B')
         
     def test_power(self):
         self.assertEqual(mymath.power( 2, y = 3),8)
@@ -45,6 +54,24 @@ class TestMyMath(unittest.TestCase):
         self.assertRaises(AssertionError,mymath.power2,2.0,3.1)
         self.assertRaises(AssertionError,mymath.power2,2.0,'A')
         self.assertRaises(ZeroDivisionError,mymath.power2,0,-1)
+    
+    def test_power3(self):
+        self.assertEqual(mymath.power3(2,1),2)
+        self.assertEqual(mymath.power3(2.0,3),8)
+        self.assertEqual(mymath.power3(2.0,0),1)
+        self.assertEqual(mymath.power3(0.0,0),1)
+        self.assertEqual(mymath.power3(-1.0,0),1)
+        self.assertEqual(mymath.power3(8.0,1),8)
+        self.assertEqual(mymath.power3(-2.0,3),-8)
+        self.assertEqual(mymath.power3(2.0,111),2.0**111)
+        self.assertEqual(mymath.power3(2,-1),0.5)
+        self.assertEqual(mymath.power3(-2,-3),-0.125)
+        self.assertEqual(mymath.power3(-1,-1),-1)
+        self.assertEqual(mymath.power3(1,-5),1)
+        self.assertEqual(mymath.power3(-2,-2),(-2)**-2)
+        self.assertRaises(AssertionError,mymath.power3,2.0,3.1)
+        self.assertRaises(AssertionError,mymath.power3,2.0,'A')
+        self.assertRaises(ZeroDivisionError,mymath.power3,0,-1)
         
     def test_pgcd(self):
         self.assertEqual(mymath.pgcd(5,5),5)

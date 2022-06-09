@@ -40,6 +40,24 @@ public class MyMath {
 	}
 
 	/**
+	 * Calcule la factorielle de n (recursif)
+	 * 
+	 * @param n entier positif <21
+	 * @return n!
+	 */
+	public static long factorielleR(int n) {
+		assert n >= 0 && n < 21 : "Le nombre doit être positif et inférieur à 21";
+
+		long res;
+		if (n == 0)
+			res = 1;
+		else
+			res = n * factorielleR(n - 1);
+
+		return res;
+	}
+
+	/**
 	 * Calcule x^y
 	 * 
 	 * @param x réel
@@ -86,7 +104,33 @@ public class MyMath {
 	}
 
 	/**
+	 * Calcule x^y
+	 * 
+	 * @param x réel
+	 * @param y entier positif
+	 * @return
+	 */
+	public static double power3(double x, int y) {
+		assert y >= 0 : "Y doit être un entier positif";
+		// Elimine les cas exposant 0
+		if (y == 0)
+			return 1.0;
+		if (y == 1 || x == 0 || x == 1)
+			return x;
+		// Y>1
+		double res = x;
+		// int z = y >> 1;// z=y/2
+		res = power3(x, y >> 1);
+		res = res * res;
+		// Si le nombre est impaire, je mutiplie par x
+		if ((y & 1) == 1) // ou (y % 2 !=0)
+			res = res * x;
+		return res;
+	}
+
+	/**
 	 * Calcul le PGCD selon Euclide
+	 * 
 	 * @param a un entier >0
 	 * @param b un entier >0
 	 * @return le pgcd de a et b
@@ -153,6 +197,19 @@ public class MyMath {
 			d = d + 2;
 		}
 		return premier;
+	}
+
+	/**
+	 * Calcule le nème nombre de Fibonacci (Récursif)
+	 * 
+	 * @return f(n)
+	 */
+	public static int fibo(int n) {
+		assert n >= 0 : " n dit être positif";
+		if (n < 2)
+			return n;
+		
+		return fibo(n - 1) + fibo(n - 2);
 	}
 
 	public static void main(String[] args) {
